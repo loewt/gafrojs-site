@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Cross-origin isolation shim (GitLab Pages cannot set COOP/COEP headers). -->
+    <script src="../coi-serviceworker.js"></script>
+    <meta charset="UTF-8">
+    <title>gafrojs · examples</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 24px; color: #222; }
+        h1 { margin-bottom: 8px; }
+        p { color: #555; }
+        ul { padding-left: 0; list-style: none; }
+        li { margin: 12px 0; }
+        a { color: #06c; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+        code { background: #f4f4f4; padding: 1px 4px; border-radius: 3px; font-size: 0.95em; }
+    </style>
+</head>
+<body>
+    <h1>gafrojs examples</h1>
+    <p>Standalone HTML pages, each self-contained — drop one into an <code>&lt;iframe&gt;</code> from a slide or a blog post.</p>
+    <ul>
+        <li><a href="primitive-gallery.html">Primitive gallery</a> — one of each CGA primitive (point, vector, line, plane, sphere, circle, point pair).</li>
+        <li><a href="intersections.html">Intersections</a> — draggable sphere intersecting a fixed plane and line, updating live.</li>
+        <li><a href="motor-interpolation.html">Motor interpolation</a> — screw-motion geodesic between two motors via <code>exp(t·log(...))</code>.</li>
+        <li><a href="motor-interpolation-comparison.html">Motor interpolation — comparison</a> — left vs right screw, double cover (negated M1), and decoupled lerp+slerp side-by-side.</li>
+        <li><a href="franka-tracking.html">Franka line tracking</a> — Franka Emika IK chasing a draggable target line.</li>
+        <li><a href="optimization-ik.html">Inverse kinematics</a> — single-arm IK to a random target pose via <code>Problem</code> + <code>GaussNewton</code>.</li>
+        <li><a href="point-constraints.html">Point constraints</a> — point-on-line / -plane / -sphere objectives, switchable live.</li>
+        <li><a href="multi-objective.html">Multi-objective IK</a> — pose + rest-posture + joint-limit objectives composed in one problem.</li>
+        <li><a href="generic-robot-fk.html">Generic robot FK</a> — load a robot description into a <code>System</code> and drive per-joint sliders.</li>
+        <li><a href="robot-interface-sim.html">robot_interface sim</a> — the sim-control core API (interface → RobotInterface → controller); needs a backend/config.</li>
+    </ul>
+</body>
+</html>

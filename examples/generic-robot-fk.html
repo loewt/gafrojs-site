@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Cross-origin isolation shim (GitLab Pages cannot set COOP/COEP headers). -->
+    <script src="../coi-serviceworker.js"></script>
+    <meta charset="UTF-8">
+    <title>gafrojs · generic robot FK</title>
+    <style>
+        html, body { margin: 0; height: 100%; overflow: hidden; font-family: system-ui, sans-serif; }
+        #viewer { position: absolute; inset: 0; }
+        #panel {
+            position: absolute; top: 8px; left: 8px; z-index: 1;
+            background: rgba(255,255,255,0.9); padding: 6px 10px;
+            border-radius: 4px; font-size: 12px; max-width: 260px;
+        }
+        #hint { color: #444; }
+    </style>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="panel">
+        <strong>generic robot · forward kinematics</strong>
+        <div id="hint"></div>
+    </div>
+    <div id="viewer"></div>
+    <script type="module">
+        import { loadGafro, Viewer, examples } from '../gafro.js';
+        const gafro = await loadGafro();
+        const viewer = new Viewer('viewer', { cameraPosition: [1.8, 1.8, 1.4] });
+        viewer.start();
+        await examples.genericRobotFK(gafro, viewer, { controls: document.getElementById('hint') });
+    </script>
+</body>
+</html>

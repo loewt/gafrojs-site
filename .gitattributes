@@ -1,0 +1,2 @@
+gafrojs.data filter=lfs diff=lfs merge=lfs -text
+gafrojs.wasm filter=lfs diff=lfs merge=lfs -text
